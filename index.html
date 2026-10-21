@@ -73,8 +73,8 @@ button,.btn,.chip,.card,[role="button"]{user-select:none;-webkit-user-select:non
 </main>
 <script>
 const T={
-ar:{title:"السجل الأكاديمي",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",p:{tot:"المجموع النهائي"},term:"الفصل",noC:"لا توجد مواد في هذا الفصل بعد.",noF:"لا توجد مواد لهذا الفلتر."},
-en:{title:"Academic Transcript",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",p:{tot:"Final Total"},term:"Term",noC:"No courses in this term yet.",noF:"No courses match this filter."}};
+ar:{title:"السجل الأكاديمي",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",p:{tot:"المجموع النهائي"},term:"الفصل",noC:"لا توجد مواد تطابق الفلتر المSelected.",noF:"لا توجد مواد لهذا الفلتر."},
+en:{title:"Academic Transcript",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",p:{tot:"Final Total"},term:"Term",noC:"No courses match the filter.",noF:"No courses match this filter."}};
 
 const SC={4:[["A",90,4],["B+",80,3.5],["B",70,3],["C+",65,2.5],["C",60,2],["D+",55,1.5],["D",50,1],["F",0,0]]};
 const $=id=>document.getElementById(id),uid=()=>Math.random().toString(36).slice(2,9);
@@ -137,7 +137,11 @@ function renderList(){
   const f=filter;let html="";
   S.terms.forEach((tm,i)=>{
     const courses=tm.courses.filter(c=>{if(f=="all")return true;if(f=="ip")return c.status=="ip";return tm.id==f});
+    
+    // تجنب إظهار الفصول التي لا تحتوي على مواد تناسب الفلتر الحالي (مثل الفلتر قيد الدراسة مع الفصل الأول)
+    if(courses.length===0 && f!=="all" && tm.id!==f) return;
     if(f!="all"&&f!="ip"&&tm.id!=f)return;
+    
     const tg=termGpa(tm),tDone=tm.courses.filter(c=>c.status=="done").length,tIp=tm.courses.filter(c=>c.status=="ip").length;
     let badgeText="",badgeColor="--mute";
     if(tDone==tm.courses.length&&tm.courses.length>0){badgeText=t("pDone");badgeColor="--gA"}
@@ -148,7 +152,6 @@ function renderList(){
     html+=`<div class="sem" data-id="${tm.id}"><div class="sem-h"><h2>${esc(tn(tm,i))} <span class="pill" style="--p:var(${badgeColor})">${badgeText}</span></h2>
     <div class="acts"><span class="s">${tg!=null?t("semGpa")+": <b>"+tg.toFixed(2)+"</b>":""}</span></div></div>`;
     
-    if(courses.length==0){html+=`<div class="empty glass">${t("noC")}</div></div>`;return}
     html+=`<div class="grid">`;
     courses.forEach(c=>{
       const col=c.status=="done"?gcol(c):"--gIP";
