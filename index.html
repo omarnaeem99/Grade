@@ -122,3 +122,24 @@ function load(){const s=sample();try{const p=JSON.parse(localStorage.getItem(KEY
 let S=load(),lang=S.lang||"ar",filter="all",lenis=null,curM=null,lastF=null,prev={g:0,p:0},first=true;
 const save=()=>{S.lang=lang;try{localStorage.setItem(KEY,JSON.stringify({lang:S.lang,theme:S.theme}))}catch(e){}};
 const t=k=>T[lang][k],nm=c=>lang=="ar"?(c.ar||c.en):(c.en||c.ar),tn=(tm,i)=>tm.name||t("term")+" "+(i+1);
+const gp=c=>{const r=SC[S.profile.scale].find(r=>r[0]==c.grade);return r?r[2]:0};
+const gcol=c=>{const r=gp(c)/S.profile.scale;return r>=.95?"--gA":r>=.85?"--gBp":r>=.7?"--gB":r>=.4?"--gC":"--gF"};
+function calc(){let pts=0,h=0;S.terms.forEach(tm=>tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;pts+=c.cr*gp(c)}}));const pl=S.profile.plan;return{gpa:h?pts/h:0,h,left:Math.max(pl-h,0),pct:pl?Math.min(h/pl*100,100):0}}
+function termGpa(tm){let p=0,h=0;tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;p+=c.cr*gp(c)}});return h?p/h:null}
+gsap.registerPlugin(ScrollTrigger);
+
+/* ===== الواجهة العامة ===== */
+function statics(){const P=S.profile,pk=o=>o[lang]||o.ar,n=pk(P.name);$("name").textContent=n;$("av").textContent=n.trim()[0]||"?";
+ $("info").innerHTML=esc(pk(P.major))+"<br>"+esc(pk(P.college));
+ $("ttl").textContent=t("title");$("gl").innerHTML=t("of")(P.scale.toFixed(2))+"<br>"+t("gl");
+ $("t_done").textContent=t("tDone");$("t_left").textContent=t("tLeft");$("t_pct").textContent=t("tPct");$("pct2").textContent=t("pof")(P.plan);
+ $("lang").textContent=t("langBtn");$("x").setAttribute("aria-label","Close");
+ document.documentElement.lang=lang;document.documentElement.dir=lang=="ar"?"rtl":"ltr";document.title=t("title");lbl()}
+const root=document.documentElement,dm=matchMedia("(prefers-color-scheme:dark)");
+if(S.theme)root.dataset.theme=S.theme;
+const isDark=()=>root.dataset.theme?root.dataset.theme=="dark":dm.matches;
+function lbl(){$("theme").textContent=isDark()?t("light"):t("dark")}
+function hero(R){const C=364.4,off=C*(1-R.pct/100);$("done").textContent=R.h;$("left").textContent=R.left;
+ const set=(g,p)=>{$("gpa").textContent=g.toFixed(2);$("pct").textContent=p.toFixed(2)+"%"};
+ if(reduce){set(R.gpa,R.pct);$("arc").style.strokeDashoffset=off;prev={g:R.gpa,p:R.pct};return}
+ const o={...prev};gsap.killTweensOf(o);gsap.to(o,{g:R.gpa,p:R.pct,duration:first?2.2:.9,de
