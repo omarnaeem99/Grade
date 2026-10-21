@@ -20,7 +20,7 @@ main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:20px 16p
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:10px;flex-wrap:wrap}.tb{display:flex;gap:8px;flex-wrap:wrap}
 .btn{font:inherit;color:var(--ink);cursor:pointer;border-radius:999px;padding:8px 16px;font-size:14px;border:1px solid var(--line);background:var(--glass);transition:all .25s cubic-bezier(.4,0,.2,1)}
 .btn:hover{transform:translateY(-2px);border-color:var(--acc);box-shadow:0 8px 22px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
-.btn:active{transform:scale(.97)}.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}.btn.dan{color:var(--gF)}.btn.sm{padding:5px 12px;font-size:13px}
+.btn:active{transform:scale(.97)}.btn.sm{padding:5px 12px;font-size:13px}
 button:focus-visible,.card:focus-visible{outline:none!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 40%,transparent)!important}
 .hero{border-radius:32px;padding:30px 26px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,80%) var(--my,0%),color-mix(in srgb,var(--acc) 26%,transparent),transparent 70%);pointer-events:none}
@@ -39,36 +39,21 @@ h1{font-size:clamp(26px,5vw,38px);margin:0 0 8px;font-weight:700;line-height:1.3
 .chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
 .chip:active{transform:scale(.97)}
 .sem{margin-top:30px}.sem-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
-.sem-h h2{margin:0;font-size:20px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.sem-h .s{font-size:13px;color:var(--mute)}.acts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sem-h h2{margin:0;font-size:20px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.sem-h .s{font-size:13px;color:var(--mute)}
 .pill{font-size:12px;font-weight:500;padding:4px 12px;border-radius:99px;color:var(--p);background:color-mix(in srgb,var(--p) 16%,transparent)}
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{border-radius:22px;padding:18px;cursor:pointer;background:var(--glass);border:1px solid var(--line);transition:transform .25s cubic-bezier(.4,0,.2,1),border-color .25s,box-shadow .25s}
-.card:hover{transform:translateY(-6px) scale(1.015);border-color:var(--c);box-shadow:0 18px 40px -18px var(--c)}
-.card:active{transform:scale(.97)}
+.card{border-radius:22px;padding:18px;background:var(--glass);border:1px solid var(--line);transition:transform .25s cubic-bezier(.4,0,.2,1),border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 12px 30px -15px var(--c)}
 .card-t{display:flex;justify-content:space-between;gap:10px;align-items:center}.card h3{margin:0;font-size:19px;font-weight:600;direction:ltr;letter-spacing:.5px;text-align:start}.cn{font-size:12.5px;color:var(--mute);margin-top:3px;line-height:1.5}
 .badge{min-width:46px;text-align:center;font-weight:700;font-size:15px;padding:6px 10px;border-radius:12px;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);direction:ltr}
 .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);margin:16px 0 8px}
 .track{height:8px;border-radius:99px;background:var(--track);overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--c)}
-.wait{background:repeating-linear-gradient(135deg,var(--track) 0 8px,transparent 8px 16px)}.wait-t{font-size:12px;color:var(--mute);margin-top:8px}
-.empty{text-align:center;color:var(--mute);padding:34px 0}.foot{text-align:center;margin-top:50px}
-.ov{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));background:rgba(4,7,18,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.md{--c:var(--acc);width:min(520px,100%);max-height:88vh;overflow:auto;border-radius:28px;padding:26px 22px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}.md.glass{background:color-mix(in srgb,var(--bg) 80%,transparent)}
-.x{position:absolute;top:14px;inset-inline-end:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--ink);cursor:pointer;font-size:15px;transition:all .25s cubic-bezier(.4,0,.2,1)}
-.x:hover{transform:rotate(90deg);border-color:var(--acc);box-shadow:0 6px 18px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
-.x:active{transform:scale(.97)}
-.md h2{margin:4px 0 12px;font-size:21px;line-height:1.45;font-weight:700;padding-inline-end:44px}.mcode{direction:ltr;unicode-bidi:isolate;display:inline-block;font-size:13px;color:var(--mute)}
-.mm{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0;font-size:14px;color:var(--mute)}
-.row{margin-top:12px;padding:12px 14px;border-radius:16px;border:1px solid var(--line)}.row.tot{background:color-mix(in srgb,var(--c) 14%,transparent);border-color:var(--c)}
-.rt{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}.rt b{direction:ltr}
-.warn{display:flex;gap:10px;margin-top:14px;padding:14px;border-radius:16px;background:color-mix(in srgb,var(--gIP) 16%,transparent);border:1px solid var(--gIP);font-size:14px;line-height:1.7}
-.f label{display:block;font-size:13px;color:var(--mute);margin:12px 0 5px}
-.in{width:100%;box-sizing:border-box;font:inherit;font-size:16px;color:var(--ink);background:var(--track);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.in:focus{outline:2px solid var(--acc);border-color:transparent}select.in option{color:#141a2e}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pr{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;align-items:center;margin-top:8px;font-size:13px}.pr .in{padding:8px}
-.btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.btns .btn{flex:1;text-align:center}.err{color:var(--gF);font-size:13px;margin-top:10px;min-height:18px}
+.mid-info{font-size:13px;color:var(--acc2);margin-top:10px;font-weight:600;display:flex;justify-content:space-between;align-items:center;background:color-mix(in srgb,var(--acc2) 12%,transparent);padding:6px 10px;border-radius:10px}
+.wait-t{font-size:12px;color:var(--mute);margin-top:8px}
+.empty{text-align:center;color:var(--mute);padding:34px 0}
 *{-webkit-tap-highlight-color:transparent}
-button,.btn,.chip,.x,.card,[role="button"],select,input{outline:none!important}
-button,.btn,.chip,.x,.card,[role="button"]{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+button,.btn,.chip,.card,[role="button"],select,input{outline:none!important}
+button,.btn,.chip,.card,[role="button"]{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -76,7 +61,7 @@ button,.btn,.chip,.x,.card,[role="button"]{user-select:none;-webkit-user-select:
 <div class="blob b1"></div><div class="blob b2"></div>
 <main>
   <div class="topbar"><strong id="ttl" style="font-size:15px;color:var(--mute)"></strong>
-    <div class="tb"><button class="btn glass" id="editBtn"></button><button class="btn glass" id="lang"></button><button class="btn glass" id="theme"></button></div></div>
+    <div class="tb"><button class="btn glass" id="lang"></button><button class="btn glass" id="theme"></button></div></div>
   <section class="hero glass" id="hero"><div class="hero-grid">
     <div class="hero-txt"><div class="avatar" id="av"></div><h1 id="name"></h1><p class="sub" id="info"></p>
       <div class="gpa-row"><div class="gpa-n" id="gpa">0.00</div><div class="gpa-l" id="gl"></div></div></div>
@@ -85,29 +70,21 @@ button,.btn,.chip,.x,.card,[role="button"]{user-select:none;-webkit-user-select:
   </div></section>
   <div class="bar"><div class="chips" id="chips"></div></div>
   <div id="list"></div>
-  <div class="foot"><button class="btn dan sm" id="rstBtn"></button></div>
 </main>
-<div id="ov" class="ov" aria-hidden="true"><div id="md" class="md glass" role="dialog" aria-modal="true" data-lenis-prevent><button id="x" class="x" type="button">✕</button><div id="mb"></div></div></div>
-
 <script>
 const T={
-ar:{title:"السجل الأكاديمي",edit:"✏️ تعديل السجل",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",warn:"المقرر قيد الدراسة حالياً - لم يتم رصد درجات الاختبارات بعد",warn2:"المقرر قيد الدراسة حالياً - لم يُرصد الاختبار النهائي بعد",p:{att:"الحضور والمشاركة",tma:"الواجب (TMA)",mid:"الاختبار النصفي",fin:"الاختبار النهائي",tot:"المجموع النهائي"},addT:"+ إضافة فصل",addC:"+ مادة",term:"الفصل",save:"حفظ",cancel:"إلغاء",del:"حذف",ed2:"تعديل",ren:"✎",noC:"لا توجد مواد في هذا الفصل بعد.",noF:"لا توجد مواد لهذا الفلتر.",noT:"لا توجد فصول. أضف فصلاً دراسياً للبدء.",
-name:"الاسم",major:"التخصص",college:"الكلية",scale:"سلم المعدل",plan:"إجمالي ساعات الخطة الدراسية",phN:"اسم الطالب",phM:"التخصص",phC:"الكلية",profile:"تعديل البيانات",termName:"اسم الفصل (اختياري)",termT:"فصل دراسي",
-code:"رمز المادة",nAr:"الاسم بالعربية",nEn:"الاسم بالإنجليزية (اختياري)",cr:"الساعات المعتمدة",status:"الحالة",stDone:"مكتملة",stIp:"قيد الدراسة / In Progress",parts:"الدرجات الجزئية (المحصّل / الأعلى)",total:"المجموع النهائي من 100",grade:"التقدير النهائي",auto:"تلقائي من المجموع",newC:"مادة جديدة",editC:"تعديل المادة",
-eReq:"أدخل الرمز والاسم وعدد ساعات صحيح.",eGr:"أدخل المجموع أو اختر التقدير.",rst:"إعادة الضبط / مسح البيانات",rstQ:"ماذا تريد أن تفعل بالبيانات المحفوظة؟",sample:"بيانات تجريبية",clear:"مسح الكل",delQ:"هل أنت متأكد من الحذف؟ لا يمكن التراجع.",delT:"سيُحذف الفصل بكل مواده."},
-en:{title:"Academic Transcript",edit:"✏️ Edit record",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",warn:"This course is currently in progress - exam grades have not been recorded yet",warn2:"This course is currently in progress - the final exam has not been recorded yet",p:{att:"Attendance & Participation",tma:"Assignment (TMA)",mid:"Midterm Exam",fin:"Final Exam",tot:"Final Total"},addT:"+ Add term",addC:"+ Course",term:"Term",save:"Save",cancel:"Cancel",del:"Delete",ed2:"Edit",ren:"✎",noC:"No courses in this term yet.",noF:"No courses match this filter.",noT:"No terms yet. Add a term to get started.",
-name:"Name",major:"Major",college:"College",scale:"GPA scale",plan:"Total Plan Credits",phN:"Student Name",phM:"Major",phC:"College",profile:"Edit profile",termName:"Term name (optional)",termT:"Term",
-code:"Course code",nAr:"Name in Arabic",nEn:"Name in English (optional)",cr:"Credit hours",status:"Status",stDone:"Completed",stIp:"In Progress",parts:"Partial grades (earned / max)",total:"Final total out of 100",grade:"Final grade",auto:"Auto from total",newC:"New course",editC:"Edit course",
-eReq:"Enter a code, a name and valid credit hours.",eGr:"Enter the total or pick a grade.",rst:"Reset / Clear data",rstQ:"What do you want to do with the saved data?",sample:"Sample data",clear:"Clear all",delQ:"Are you sure? This cannot be undone.",delT:"The term and all its courses will be deleted."}};
-const SC={4:[["A",90,4],["B+",80,3.5],["B",70,3],["C+",65,2.5],["C",60,2],["D+",55,1.5],["D",50,1],["F",0,0]],5:[["A",90,5],["B+",80,4.5],["B",70,4],["C+",65,3.5],["C",60,3],["D+",55,2.5],["D",50,2],["F",0,0]]};
-const MAX={att:10,tma:10,mid:30,fin:50},KEYS=["att","tma","mid","fin"],KEY="gpa-view-prefs";
+ar:{title:"السجل الأكاديمي",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",p:{tot:"المجموع النهائي"},term:"الفصل",noC:"لا توجد مواد في هذا الفصل بعد.",noF:"لا توجد مواد لهذا الفلتر."},
+en:{title:"Academic Transcript",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",p:{tot:"Final Total"},term:"Term",noC:"No courses in this term yet.",noF:"No courses match this filter."}};
+
+const SC={4:[["A",90,4],["B+",80,3.5],["B",70,3],["C+",65,2.5],["C",60,2],["D+",55,1.5],["D",50,1],["F",0,0]]};
 const $=id=>document.getElementById(id),uid=()=>Math.random().toString(36).slice(2,9);
 const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-const D=(code,ar,en,cr,parts)=>{const total=Object.values(parts).reduce((a,p)=>a+p[0],0);return{id:uid(),code,ar,en,cr,status:"done",parts,total,grade:null}};
-const IP=(code,ar,en,cr,mid)=>({id:uid(),code,ar,en,cr,status:"ip",parts:mid!=null?{mid:[mid,30]}:null});
 
-function sample(){const s={profile:{name:{ar:"عمر نعيم",en:"Omar Naeem"},major:{ar:"الحوسبة مع الأعمال",en:"Computing with Business"},college:{ar:"كلية دراسات الحاسب الآلي",en:"College of Computing Studies"},scale:4,plan:131},terms:[
+const D=(code,ar,en,cr,parts)=>{const total=Object.values(parts).reduce((a,p)=>a+p[0],0);return{id:uid(),code,ar,en,cr,status:"done",parts,total,grade:SC[4].find(r=>total>=r[1])[0]}};
+const IP=(code,ar,en,cr,mid)=>({id:uid(),code,ar,en,cr,status:"ip",mid:mid});
+
+function sample(){return{profile:{name:{ar:"عمر نعيم",en:"Omar Naeem"},major:{ar:"الحوسبة مع الأعمال",en:"Computing with Business"},college:{ar:"كلية دراسات الحاسب الآلي",en:"College of Computing Studies"},scale:4,plan:131},terms:[
 {id:uid(),name:"",courses:[
 D("GR101","مهارات التعلم الذاتي","Self-Learning Skills",3,{tma:[18,20],mid:[28,30],fin:[44,50]}),
 D("EL111","مهارات الاتصال في اللغة الإنجليزية 1","English Communication Skills 1",3,{att:[9.75,10],tma:[9,10],mid:[28,30],fin:[41,50]}),
@@ -118,18 +95,15 @@ D("MT129","حساب التفاضل والتكامل والاحتمال","Calculu
 IP("AR112","مهارات الاتصال في اللغة العربية 2","Arabic Communication Skills 2",3,21),
 IP("EL112","مهارات الاتصال في اللغة الإنجليزية 2","English Communication Skills 2",3,25.5),
 IP("GR111","الدراسات الإسلامية","Islamic Studies",3,29),
-IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4),
+IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4,null),
 IP("TM105","مقدمة في البرمجة","Introduction to Programming",4,27)
-]}],theme:"",lang:"ar"};
-s.terms.forEach(c=>c.courses?.forEach(x=>{if(x.status=="done")x.grade=gradeOf(x.total,s.profile.scale)}));return s}
+]}],theme:"",lang:"ar"}}
 
-const gradeOf=(tot,sc)=>SC[sc].find(r=>tot>=r[1])[0];
-function load(){let s=sample();try{const p=JSON.parse(localStorage.getItem(KEY)||"null");if(p&&p.terms)s=p}catch(e){}return s}
-let S=load(),lang=S.lang||"ar",filter="all",lenis=null,curM=null,lastF=null,prev={g:0,p:0},first=true;
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+let S=sample(),lang="ar",filter="all",prev={g:0,p:0},first=true;
 const t=k=>T[lang][k],nm=c=>lang=="ar"?(c.ar||c.en):(c.en||c.ar),tn=(tm,i)=>tm.name||t("term")+" "+(i+1);
-const gp=c=>{const r=SC[S.profile.scale].find(r=>r[0]==c.grade);return r?r[2]:0};
-const gcol=c=>{const r=gp(c)/S.profile.scale;return r>=.95?"--gA":r>=.85?"--gBp":r>=.7?"--gB":r>=.4?"--gC":"--gF"};
+const gp=c=>{const r=SC[4].find(r=>r[0]==c.grade);return r?r[2]:0};
+const gcol=c=>{const r=gp(c)/4;return r>=.95?"--gA":r>=.85?"--gBp":r>=.7?"--gB":r>=.4?"--gC":"--gF"};
+
 function calc(){let pts=0,h=0;S.terms.forEach(tm=>tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;pts+=c.cr*gp(c)}}));const pl=S.profile.plan;return{gpa:h?pts/h:0,h,left:Math.max(pl-h,0),pct:pl?Math.min(h/pl*100,100):0}}
 function termGpa(tm){let p=0,h=0;tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;p+=c.cr*gp(c)}});return h?p/h:null}
 gsap.registerPlugin(ScrollTrigger);
@@ -138,18 +112,21 @@ function statics(){const P=S.profile,pk=o=>o[lang]||o.ar,n=pk(P.name);$("name").
  $("info").innerHTML=esc(pk(P.major))+"<br>"+esc(pk(P.college));
  $("ttl").textContent=t("title");$("gl").innerHTML=t("of")(P.scale.toFixed(2))+"<br>"+t("gl");
  $("t_done").textContent=t("tDone");$("t_left").textContent=t("tLeft");$("t_pct").textContent=t("tPct");$("pct2").textContent=t("pof")(P.plan);
- $("lang").textContent=t("langBtn");$("editBtn").textContent=t("edit");$("rstBtn").textContent=t("rst");$("x").setAttribute("aria-label","Close");
+ $("lang").textContent=t("langBtn");
  document.documentElement.lang=lang;document.documentElement.dir=lang=="ar"?"rtl":"ltr";document.title=t("title");lbl()}
+
 const root=document.documentElement,dm=matchMedia("(prefers-color-scheme:dark)");
 if(S.theme)root.dataset.theme=S.theme;
 const isDark=()=>root.dataset.theme?root.dataset.theme=="dark":dm.matches;
 function lbl(){$("theme").textContent=isDark()?t("light"):t("dark")}
+
 function hero(R){const C=364.4,off=C*(1-R.pct/100);$("done").textContent=R.h;$("left").textContent=R.left;
  const set=(g,p)=>{$("gpa").textContent=g.toFixed(2);$("pct").textContent=p.toFixed(2)+"%"};
  if(reduce){set(R.gpa,R.pct);$("arc").style.strokeDashoffset=off;prev={g:R.gpa,p:R.pct};return}
  const o={...prev};gsap.killTweensOf(o);gsap.to(o,{g:R.gpa,p:R.pct,duration:first?2.2:.9,ease:"power3.out",onUpdate:()=>set(o.g,o.p)});
  gsap.to("#arc",{strokeDashoffset:off,duration:first?2.4:1,ease:"power3.out"});
  prev={g:R.gpa,p:R.pct};first=false}
+
 function chips(){const list=[{id:"all",l:t("all")},{id:"ip",l:t("ip")}];
  S.terms.forEach((tm,i)=>{list.push({id:tm.id,l:tn(tm,i)})});
  $("chips").innerHTML=list.map(c=>`<button class="chip ${filter==c.id?"on":""}" data-f="${c.id}">${esc(c.l)}</button>`).join("");
@@ -169,21 +146,22 @@ function renderList(){
     else{badgeText=t("pEmpty");badgeColor="--mute"}
     
     html+=`<div class="sem" data-id="${tm.id}"><div class="sem-h"><h2>${esc(tn(tm,i))} <span class="pill" style="--p:var(${badgeColor})">${badgeText}</span></h2>
-    <div class="acts"><span class="s">${tg!=null?t("semGpa")+": <b>"+tg.toFixed(2)+"</b>":""}</span>
-    <button class="btn sm glass" onclick="openTerm('${tm.id}')">${t("ren")}</button>
-    <button class="btn sm glass" onclick="addCourse('${tm.id}')">${t("addC")}</button></div></div>`;
+    <div class="acts"><span class="s">${tg!=null?t("semGpa")+": <b>"+tg.toFixed(2)+"</b>":""}</span></div></div>`;
     
     if(courses.length==0){html+=`<div class="empty glass">${t("noC")}</div></div>`;return}
     html+=`<div class="grid">`;
     courses.forEach(c=>{
       const col=c.status=="done"?gcol(c):"--gIP";
-      html+=`<div class="card glass" style="--c:var(${col})" onclick="openCourse('${tm.id}','${c.id}')">
+      html+=`<div class="card glass" style="--c:var(${col})">
       <div class="card-t"><div><h3>${esc(c.code)}</h3><div class="cn">${esc(nm(c))}</div></div>
       <div class="badge" style="--c:var(${col})">${c.status=="done"?c.grade:t("ip")}</div></div>`;
       if(c.status=="done"){
         const pct=c.total||0;
         html+=`<div class="meta"><span>${t("p.tot")}</span><b>${pct.toFixed(1)}%</b></div><div class="track"><div class="fill" style="width:${pct}%;--c:var(${col})"></div></div>`;
       }else{
+        if(c.mid!=null){
+          html+=`<div class="mid-info"><span>الاختبار النصفي (Midterm)</span><b>${c.mid} / 30</b></div>`;
+        }
         html+=`<div class="wait-t">⏳ ${t("wait")}</div>`;
       }
       html+=`</div>`;
@@ -195,103 +173,10 @@ function renderList(){
 }
 
 function render(){statics();hero(calc());chips();renderList()}
-function openModal(html){$("mb").innerHTML=html;$("ov").style.display="flex";$("ov").setAttribute("aria-hidden","false")}
-function closeModal(){$("ov").style.display="none";$("ov").setAttribute("aria-hidden","true");curM=null}
-$("x").onclick=closeModal;$("ov").onclick=e=>{if(e.target==$("ov"))closeModal()}
 
-function openProfile(){
-  curM="profile";
-  const P=S.profile,pk=o=>o[lang]||o.ar;
-  openModal(`<h2>${esc(t("profile"))}</h2>
-  <div class="f"><label>${esc(t("name"))}</label><input id="p_n" class="in" value="${esc(pk(P.name))}">
-  <label>${esc(t("major"))}</label><input id="p_m" class="in" value="${esc(pk(P.major))}">
-  <label>${esc(t("college"))}</label><input id="p_c" class="in" value="${esc(pk(P.college))}">
-  <div class="two"><div><label>${esc(t("scale"))}</label><select id="p_s" class="in"><option value="4"${P.scale==4?" selected":""}>4.0</option><option value="5"${P.scale==5?" selected":""}>5.0</option></select></div>
-  <div><label>${esc(t("plan"))}</label><input id="p_pl" type="number" class="in" value="${P.plan}"></div></div></div>
-  <div class="btns"><button class="btn pri" onclick="saveProfile()">${esc(t("save"))}</button><button class="btn glass" onclick="closeModal()">${esc(t("cancel"))}</button></div>`);
-}
-function saveProfile(){
-  const n=$("p_n").value.trim(),m=$("p_m").value.trim(),c=$("p_c").value.trim(),sc=parseInt($("p_s").value),pl=parseInt($("p_pl").value);
-  if(!n||!pl)return;
-  S.profile.name[lang]=n;S.profile.major[lang]=m;S.profile.college[lang]=c;S.profile.scale=sc;S.profile.plan=pl;
-  save();render();closeModal();
-}
-$("editBtn").onclick=openProfile;
-
-function openTerm(id){
-  const tm=S.terms.find(x=>x.id==id);if(!tm)return;
-  curM="term:"+id;
-  openModal(`<h2>${esc(t("ren"))}</h2>
-  <div class="f"><label>${esc(t("termName"))}</label><input id="tm_n" class="in" value="${esc(tm.name||"")}"></div>
-  <div class="btns"><button class="btn pri" onclick="saveTerm('${id}')">${esc(t("save"))}</button><button class="btn dan" onclick="delTerm('${id}')">${esc(t("del"))}</button><button class="btn glass" onclick="closeModal()">${esc(t("cancel"))}</button></div>`);
-}
-function saveTerm(id){const tm=S.terms.find(x=>x.id==id);if(!tm)return;tm.name=$("p_n")?$("p_n").value.trim():$("tm_n").value.trim();save();render();closeModal()}
-function delTerm(id){if(confirm(t("delQ"))){S.terms=S.terms.filter(x=>x.id!=id);save();render();closeModal()}}
-
-function openCourse(tid,cid){
-  const tm=S.terms.find(x=>x.id==tid),c=tm?.courses.find(x=>x.id==cid);if(!c)return;
-  curM="course:"+tid+":"+cid;
-  const isDone=c.status=="done";
-  let h=`<h2>${esc(c.code)} - ${esc(nm(c))}</h2><div class="f">
-  <div class="two"><div><label>${esc(t("code"))}</label><input id="c_cd" class="in" value="${esc(c.code)}"></div>
-  <div><label>${esc(t("cr"))}</label><input id="c_cr" type="number" class="in" value="${c.cr}"></div></div>
-  <label>${esc(t("nAr"))}</label><input id="c_ar" class="in" value="${esc(c.ar||"")}">
-  <label>${esc(t("nEn"))}</label><input id="c_en" class="in" value="${esc(c.en||"")}">
-  <label>${esc(t("status"))}</label><select id="c_st" class="in" onchange="toggleSt(this.value)"><option value="done"${isDone?" selected":""}>${esc(t("stDone"))}</option><option value="ip"${!isDone?" selected":""}>${esc(t("stIp"))}</option></select>
-  <div id="box_done" style="display:${isDone?"block":"none"}">
-    <label>${esc(t("parts"))}</label>`;
-  KEYS.forEach(k=>{
-    const v=c.parts?.[k]?.[0]||0,mx=MAX[k];
-    h+=`<div class="pr"><span>${t("p."+k)} (${mx})</span><input id="pr_${k}" type="number" step="any" class="in" value="${v}" oninput="calcTot()"></div>`;
-  });
-  h+=`<label>${esc(t("total"))}</label><input id="c_tot" class="in" readonly style="font-weight:700">
-  <label>${esc(t("grade"))}</label><input id="c_gr" class="in" readonly style="font-weight:700"></div>
-  <div id="box_ip" style="display:${!isDone?"block":"none"}"><div class="warn">ℹ️ ${esc(t("warn"))}</div></div></div>
-  <div class="err" id="c_err"></div>
-  <div class="btns"><button class="btn pri" onclick="saveCourse('${tid}','${cid}')">${esc(t("save"))}</button><button class="btn dan" onclick="delCourse('${tid}','${cid}')">${esc(t("del"))}</button><button class="btn glass" onclick="closeModal()">${esc(t("cancel"))}</button></div>`;
-  openModal(h);if(isDone)calcTot();
-}
-function toggleSt(v){$("box_done").style.display=v=="done"?"block":"none";$("box_ip").style.display=v=="ip"?"block":"none"}
-function calcTot(){
-  let tot=0;KEYS.forEach(k=>{tot+=parseFloat($("pr_"+k)?.value||0)});
-  const g=gradeOf(tot,S.profile.scale);
-  if($("c_tot"))$("c_tot").value=tot.toFixed(1)+" / 100";
-  if($("c_gr"))$("c_gr").value=g;
-}
-function addCourse(tid){
-  const tm=S.terms.find(x=>x.id==tid);if(!tm)return;
-  const newC={id:uid(),code:"NEW101",ar:"مقرر جديد",en:"New Course",cr:3,status:"ip",parts:null};
-  tm.courses.push(newC);save();render();openCourse(tid,newC.id);
-}
-function saveCourse(tid,cid){
-  const tm=S.terms.find(x=>x.id==tid),c=tm?.courses.find(x=>x.id==cid);if(!c)return;
-  const cd=$("c_cd").value.trim(),ar=$("c_ar").value.trim(),en=$("c_en").value.trim(),cr=parseInt($("c_cr").value),st=$("c_st").value;
-  if(!cd||!ar||!cr){$("c_err").textContent=t("eReq");return}
-  c.code=cd;c.ar=ar;c.en=en;c.cr=cr;c.status=st;
-  if(st=="done"){
-    c.parts={};let tot=0;
-    KEYS.forEach(k=>{const v=parseFloat($("pr_"+k).value||0);c.parts[k]=[v,MAX[k]];tot+=v});
-    c.total=tot;c.grade=gradeOf(tot,S.profile.scale);
-  }else{c.parts=null;c.total=null;c.grade=null}
-  save();render();closeModal();
-}
-function delCourse(tid,cid){
-  const tm=S.terms.find(x=>x.id==tid);if(!tm)return;
-  tm.courses=tm.courses.filter(x=>x.id!=cid);save();render();closeModal();
-}
-
-$("rstBtn").onclick=()=>{
-  openModal(`<h2>${esc(t("rst"))}</h2><p>${esc(t("rstQ"))}</p>
-  <div class="btns"><button class="btn pri" onclick="resetData(true)">${esc(t("sample"))}</button><button class="btn dan" onclick="resetData(false)">${esc(t("clear"))}</button><button class="btn glass" onclick="closeModal()">${esc(t("cancel"))}</button></div>`);
-};
-function resetData(isSample){
-  localStorage.removeItem(KEY);
-  S=sample();first=true;render();closeModal();
-}
-
-$("lang").onclick=()=>{lang=lang=="ar"?"en":"ar";S.lang=lang;save();render();statics()};
+$("lang").onclick=()=>{lang=lang=="ar"?"en":"ar";render();statics()};
 $("theme").onclick=()=>{
-  const d=isDark();root.dataset.theme=d?"light":"dark";S.theme=root.dataset.theme;save();lbl();
+  const d=isDark();root.dataset.theme=d?"light":"dark";S.theme=root.dataset.theme;lbl();
 };
 
 window.onload=()=>{
