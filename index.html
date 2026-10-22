@@ -18,10 +18,9 @@ body{margin:0;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background
 main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:20px 16px 70px}
 .glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4)}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:10px;flex-wrap:wrap}.tb{display:flex;gap:8px;flex-wrap:wrap}
-.btn{font:inherit;color:var(--ink);cursor:pointer;border-radius:999px;padding:8px 16px;font-size:14px;border:1px solid var(--line);background:var(--glass);transition:all .25s cubic-bezier(.4,0,.2,1)}
-.btn:hover{transform:translateY(-2px);border-color:var(--acc);box-shadow:0 8px 22px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
-.btn:active{transform:scale(.97)}.btn.sm{padding:5px 12px;font-size:13px}
-button:focus-visible,.card:focus-visible{outline:none!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 40%,transparent)!important}
+.btn{font:inherit;color:var(--ink);cursor:pointer;border-radius:999px;padding:8px 16px;font-size:14px;transition:transform .25s,border-color .25s,background .25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--acc)}.btn:active{transform:scale(.96)}.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}.btn.dan{color:var(--gF)}.btn.sm{padding:5px 12px;font-size:13px}
+button:focus-visible,.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .hero{border-radius:32px;padding:30px 26px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,80%) var(--my,0%),color-mix(in srgb,var(--acc) 26%,transparent),transparent 70%);pointer-events:none}
 .hero-grid{display:grid;gap:26px;grid-template-columns:1fr;position:relative}@media(min-width:800px){.hero-grid{grid-template-columns:1.2fr 1fr;align-items:center}}
@@ -34,26 +33,43 @@ h1{font-size:clamp(26px,5vw,38px);margin:0 0 8px;font-weight:700;line-height:1.3
 .ring .num{position:absolute;inset:0;display:grid;place-items:center;font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;direction:ltr}
 .stats{display:grid;gap:12px;font-size:13px;color:var(--mute)}.stats b{color:var(--ink);font-size:19px;margin-inline-end:6px;font-variant-numeric:tabular-nums}
 .bar{margin:34px 0 4px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:inherit;font-size:14px;color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);direction:ltr}
-.chip:hover{color:var(--ink);border-color:var(--acc);transform:translateY(-2px);box-shadow:0 8px 22px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
-.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
-.chip:active{transform:scale(.97)}
+.chip{font:inherit;font-size:14px;color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:all .25s;direction:ltr}.chip:hover{color:var(--ink);border-color:var(--acc);transform:translateY(-2px)}.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
 .sem{margin-top:30px}.sem-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
-.sem-h h2{margin:0;font-size:20px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.sem-h .s{font-size:13px;color:var(--mute)}
+.sem-h h2{margin:0;font-size:20px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.sem-h .s{font-size:13px;color:var(--mute)}.acts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .pill{font-size:12px;font-weight:500;padding:4px 12px;border-radius:99px;color:var(--p);background:color-mix(in srgb,var(--p) 16%,transparent)}
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{border-radius:22px;padding:18px;background:var(--glass);border:1px solid var(--line);transition:transform .25s cubic-bezier(.4,0,.2,1),border-color .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 12px 30px -15px var(--c)}
+.card{border-radius:22px;padding:18px;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}.card:hover{transform:translateY(-6px) scale(1.015);border-color:var(--c);box-shadow:0 18px 40px -18px var(--c)}
 .card-t{display:flex;justify-content:space-between;gap:10px;align-items:center}.card h3{margin:0;font-size:19px;font-weight:600;direction:ltr;letter-spacing:.5px;text-align:start}.cn{font-size:12.5px;color:var(--mute);margin-top:3px;line-height:1.5}
 .badge{min-width:46px;text-align:center;font-weight:700;font-size:15px;padding:6px 10px;border-radius:12px;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);direction:ltr}
 .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);margin:16px 0 8px}
 .track{height:8px;border-radius:99px;background:var(--track);overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--c)}
-.mid-info{font-size:13px;color:var(--acc2);margin-top:10px;font-weight:600;display:flex;justify-content:space-between;align-items:center;background:color-mix(in srgb,var(--acc2) 12%,transparent);padding:6px 10px;border-radius:10px}
-.wait-t{font-size:12px;color:var(--mute);margin-top:8px}
-.empty{text-align:center;color:var(--mute);padding:34px 0}
+.wait{background:repeating-linear-gradient(135deg,var(--track) 0 8px,transparent 8px 16px)}.wait-t{font-size:12px;color:var(--mute);margin-top:8px}
+.empty{text-align:center;color:var(--mute);padding:34px 0}.foot{text-align:center;margin-top:50px}
+.ov{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));background:rgba(4,7,18,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.md{--c:var(--acc);width:min(520px,100%);max-height:88vh;overflow:auto;border-radius:28px;padding:26px 22px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}.md.glass{background:color-mix(in srgb,var(--bg) 80%,transparent)}
+.x{position:absolute;top:14px;inset-inline-end:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--ink);cursor:pointer;font-size:15px;transition:transform .25s}.x:hover{transform:rotate(90deg)}
+.md h2{margin:4px 0 12px;font-size:21px;line-height:1.45;font-weight:700;padding-inline-end:44px}.mcode{direction:ltr;unicode-bidi:isolate;display:inline-block;font-size:13px;color:var(--mute)}
+.mm{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0;font-size:14px;color:var(--mute)}
+.row{margin-top:12px;padding:12px 14px;border-radius:16px;border:1px solid var(--line)}.row.tot{background:color-mix(in srgb,var(--c) 14%,transparent);border-color:var(--c)}
+.rt{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}.rt b{direction:ltr}
+.warn{display:flex;gap:10px;margin-top:14px;padding:14px;border-radius:16px;background:color-mix(in srgb,var(--gIP) 16%,transparent);border:1px solid var(--gIP);font-size:14px;line-height:1.7}
+.f label{display:block;font-size:13px;color:var(--mute);margin:12px 0 5px}
+.in{width:100%;box-sizing:border-box;font:inherit;font-size:16px;color:var(--ink);background:var(--track);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.in:focus{outline:2px solid var(--acc);border-color:transparent}select.in option{color:#141a2e}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pr{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;align-items:center;margin-top:8px;font-size:13px}.pr .in{padding:8px}
+.btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.btns .btn{flex:1;text-align:center}.err{color:var(--gF);font-size:13px;margin-top:10px;min-height:18px}
+/* ===== تحسين الأزرار والعناصر التفاعلية ===== */
 *{-webkit-tap-highlight-color:transparent}
-button,.btn,.chip,.card,[role="button"],select,input{outline:none!important}
-button,.btn,.chip,.card,[role="button"]{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+button,.btn,.chip,.x,.card,[role="button"],select,input{outline:none!important;-webkit-appearance:none;appearance:none}
+button,.btn,.chip,.x,.card,[role="button"]{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.btn,.chip,.x{overflow:hidden;transition:all .25s cubic-bezier(.4,0,.2,1)}
+.card{transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}
+.btn:hover,.chip:hover{transform:translateY(-2px);border-color:var(--line);box-shadow:0 8px 22px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
+.btn.pri:hover{border-color:var(--acc)}.chip.on:hover{border-color:var(--acc)}
+.x:hover{border-color:var(--line);box-shadow:0 6px 18px -8px color-mix(in srgb,var(--acc) 55%,transparent)}
+.card:hover{border-color:var(--line)}
+.btn:active,.chip:active,.x:active,.card:active{transform:scale(.97)}
+.btn:focus-visible,.chip:focus-visible,.x:focus-visible,.card:focus-visible{box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 40%,transparent)!important}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -70,124 +86,116 @@ button,.btn,.chip,.card,[role="button"]{user-select:none;-webkit-user-select:non
   </div></section>
   <div class="bar"><div class="chips" id="chips"></div></div>
   <div id="list"></div>
-</main>
-<script>
+  </main>
+<div id="ov" class="ov" aria-hidden="true"><div id="md" class="md glass" role="dialog" aria-modal="true" data-lenis-prevent><button id="x" class="x" type="button">✕</button><div id="mb"></div></div></div><script>
 const T={
-ar:{title:"السجل الأكاديمي",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",p:{tot:"المجموع النهائي"},term:"الفصل",noC:"لا توجد مواد تطابق الفلتر المSelected.",noF:"لا توجد مواد لهذا الفلتر."},
-en:{title:"Academic Transcript",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",p:{tot:"Final Total"},term:"Term",noC:"No courses match the filter.",noF:"No courses match this filter."}};
-
-const SC={4:[["A",90,4],["B+",80,3.5],["B",70,3],["C+",65,2.5],["C",60,2],["D+",55,1.5],["D",50,1],["F",0,0]]};
+ar:{title:"السجل الأكاديمي",edit:"✏️ تعديل السجل",dark:"الوضع الداكن",light:"الوضع الفاتح",langBtn:"English",of:s=>"من "+s,gl:"المعدل التراكمي",tDone:"ساعة مكتملة",tLeft:"ساعة متبقية",tPct:"نسبة إتمام الخطة",pof:n=>"(من "+n+" ساعة)",all:"الكل",ip:"قيد الدراسة",hrs:"ساعات",semGpa:"معدل الفصل",pDone:"مكتمل",pIp:"قيد الدراسة",pMix:"جزئي",pEmpty:"فارغ",wait:"بانتظار الدرجة النهائية",warn:"المقرر قيد الدراسة حالياً - لم يتم رصد درجات الاختبارات بعد",warn2:"المقرر قيد الدراسة حالياً - لم يُرصد الاختبار النهائي بعد",p:{att:"الحضور والمشاركة",tma:"الواجب (TMA)",mid:"الاختبار النصفي",fin:"الاختبار النهائي",tot:"المجموع النهائي"},addT:"+ إضافة فصل",addC:"+ مادة",term:"الفصل",save:"حفظ",cancel:"إلغاء",del:"حذف",ed2:"تعديل",ren:"✎",noC:"لا توجد مواد في هذا الفصل بعد.",noF:"لا توجد مواد لهذا الفلتر.",noT:"لا توجد فصول. أضف فصلاً دراسياً للبدء.",
+name:"الاسم",major:"التخصص",college:"الكلية",scale:"سلم المعدل",plan:"إجمالي ساعات الخطة الدراسية",phN:"اسم الطالب",phM:"التخصص",phC:"الكلية",profile:"تعديل البيانات",termName:"اسم الفصل (اختياري)",termT:"فصل دراسي",
+code:"رمز المادة",nAr:"الاسم بالعربية",nEn:"الاسم بالإنجليزية (اختياري)",cr:"الساعات المعتمدة",status:"الحالة",stDone:"مكتملة",stIp:"قيد الدراسة / In Progress",parts:"الدرجات الجزئية (المحصّل / الأعلى)",total:"المجموع النهائي من 100",grade:"التقدير النهائي",auto:"تلقائي من المجموع",newC:"مادة جديدة",editC:"تعديل المادة",
+eReq:"أدخل الرمز والاسم وعدد ساعات صحيح.",eGr:"أدخل المجموع أو اختر التقدير.",rst:"إعادة الضبط / مسح البيانات",rstQ:"ماذا تريد أن تفعل بالبيانات المحفوظة؟",sample:"بيانات تجريبية",clear:"مسح الكل",delQ:"هل أنت متأكد من الحذف؟ لا يمكن التراجع.",delT:"سيُحذف الفصل بكل مواده."},
+en:{title:"Academic Transcript",edit:"✏️ Edit record",dark:"Dark mode",light:"Light mode",langBtn:"العربية",of:s=>"out of "+s,gl:"Cumulative GPA",tDone:"credit hours completed",tLeft:"credit hours remaining",tPct:"Plan completion",pof:n=>"(of "+n+" hours)",all:"All",ip:"In Progress",hrs:"hours",semGpa:"Term GPA",pDone:"Completed",pIp:"In Progress",pMix:"Partial",pEmpty:"Empty",wait:"Awaiting final grade",warn:"This course is currently in progress - exam grades have not been recorded yet",warn2:"This course is currently in progress - the final exam has not been recorded yet",p:{att:"Attendance & Participation",tma:"Assignment (TMA)",mid:"Midterm Exam",fin:"Final Exam",tot:"Final Total"},addT:"+ Add term",addC:"+ Course",term:"Term",save:"Save",cancel:"Cancel",del:"Delete",ed2:"Edit",ren:"✎",noC:"No courses in this term yet.",noF:"No courses match this filter.",noT:"No terms yet. Add a term to get started.",
+name:"Name",major:"Major",college:"College",scale:"GPA scale",plan:"Total Plan Credits",phN:"Student Name",phM:"Major",phC:"College",profile:"Edit profile",termName:"Term name (optional)",termT:"Term",
+code:"Course code",nAr:"Name in Arabic",nEn:"Name in English (optional)",cr:"Credit hours",status:"Status",stDone:"Completed",stIp:"In Progress",parts:"Partial grades (earned / max)",total:"Final total out of 100",grade:"Final grade",auto:"Auto from total",newC:"New course",editC:"Edit course",
+eReq:"Enter a code, a name and valid credit hours.",eGr:"Enter the total or pick a grade.",rst:"Reset / Clear data",rstQ:"What do you want to do with the saved data?",sample:"Sample data",clear:"Clear all",delQ:"Are you sure? This cannot be undone.",delT:"The term and all its courses will be deleted."}};
+const SC={4:[["A",90,4],["B+",80,3.5],["B",70,3],["C+",65,2.5],["C",60,2],["D+",55,1.5],["D",50,1],["F",0,0]],5:[["A",90,5],["B+",80,4.5],["B",70,4],["C+",65,3.5],["C",60,3],["D+",55,2.5],["D",50,2],["F",0,0]]};
+const MAX={att:10,tma:10,mid:30,fin:50},KEYS=["att","tma","mid","fin"],KEY="gpa-view-prefs";
 const $=id=>document.getElementById(id),uid=()=>Math.random().toString(36).slice(2,9);
 const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const D=(code,ar,en,cr,parts)=>{const total=Object.values(parts).reduce((a,p)=>a+p[0],0);return{id:uid(),code,ar,en,cr,status:"done",parts,total,grade:null}};
+const IP=(code,ar,en,cr,mid)=>({id:uid(),code,ar,en,cr,status:"ip",parts:mid!=null?{mid:[mid,30]}:null});
 
-const D=(code,ar,en,cr,parts)=>{const total=Object.values(parts).reduce((a,p)=>a+p[0],0);return{id:uid(),code,ar,en,cr,status:"done",parts,total,grade:SC[4].find(r=>total>=r[1])[0]}};
-const IP=(code,ar,en,cr,mid)=>({id:uid(),code,ar,en,cr,status:"ip",mid:mid});
-
-function sample(){return{profile:{name:{ar:"عمر نعيم",en:"Omar Naeem"},major:{ar:"الحوسبة مع الأعمال",en:"Computing with Business"},college:{ar:"كلية دراسات الحاسب الآلي",en:"College of Computing Studies"},scale:4,plan:131},terms:[
+/* ===== بياناتك: عدّل هنا فقط (الاسم، الخطة، الفصول، المواد، الدرجات) ===== */
+function sample(){const s={profile:{name:{ar:"عمر نعيم",en:"Omar Naeem"},major:{ar:"الحوسبة مع الأعمال",en:"Computing with Business"},college:{ar:"كلية دراسات الحاسب الآلي",en:"College of Computing Studies"},scale:4,plan:131},terms:[
 {id:uid(),name:"",courses:[
 D("GR101","مهارات التعلم الذاتي","Self-Learning Skills",3,{tma:[18,20],mid:[28,30],fin:[44,50]}),
 D("EL111","مهارات الاتصال في اللغة الإنجليزية 1","English Communication Skills 1",3,{att:[9.75,10],tma:[9,10],mid:[28,30],fin:[41,50]}),
 D("AR111","مهارات الاتصال في اللغة العربية 1","Arabic Communication Skills 1",3,{att:[10,10],tma:[10,10],mid:[25,30],fin:[38,50]}),
 D("TU170","أساسيات الحوسبة","Computing Fundamentals",3,{att:[10,10],tma:[10,10],mid:[22,30],fin:[41,50]}),
 D("MT129","حساب التفاضل والتكامل والاحتمال","Calculus and Probability",4,{att:[10,10],tma:[10,10],mid:[17,30],fin:[41,50]})]},
-{id:uid(),name:"",courses:[
-IP("AR112","مهارات الاتصال في اللغة العربية 2","Arabic Communication Skills 2",3,21),
-IP("EL112","مهارات الاتصال في اللغة الإنجليزية 2","English Communication Skills 2",3,25.5),
-IP("GR111","الدراسات الإسلامية","Islamic Studies",3,29),
-IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4,null),
-IP("TM105","مقدمة في البرمجة","Introduction to Programming",4,27)
-]}],theme:"",lang:"ar"}}
-
-let S=sample(),lang="ar",filter="all",prev={g:0,p:0},first=true;
+{id:uid(),name:"",courses:[IP("AR112","مهارات الاتصال في اللغة العربية 2","Arabic Communication Skills 2",3,21),IP("EL112","مهارات الاتصال في اللغة الإنجليزية 2","English Communication Skills 2",3,25.5),IP("GR111","الدراسات الإسلامية","Islamic Studies",3,29),IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4),IP("TM105","مقدمة في البرمجة","Introduction to Programming",4,27)]}],theme:"",lang:"ar"};
+s.terms[0].courses.forEach(c=>c.grade=gradeOf(c.total,4));return s}
+const gradeOf=(tot,sc)=>SC[sc].find(r=>tot>=r[1])[0];
+function load(){const s=sample();try{const p=JSON.parse(localStorage.getItem(KEY)||"{}");if(p.lang)s.lang=p.lang;if(p.theme)s.theme=p.theme}catch(e){}return s}
+let S=load(),lang=S.lang||"ar",filter="all",lenis=null,curM=null,lastF=null,prev={g:0,p:0},first=true;
+const save=()=>{S.lang=lang;try{localStorage.setItem(KEY,JSON.stringify({lang:S.lang,theme:S.theme}))}catch(e){}};
 const t=k=>T[lang][k],nm=c=>lang=="ar"?(c.ar||c.en):(c.en||c.ar),tn=(tm,i)=>tm.name||t("term")+" "+(i+1);
-const gp=c=>{const r=SC[4].find(r=>r[0]==c.grade);return r?r[2]:0};
-const gcol=c=>{const r=gp(c)/4;return r>=.95?"--gA":r>=.85?"--gBp":r>=.7?"--gB":r>=.4?"--gC":"--gF"};
-
+const gp=c=>{const r=SC[S.profile.scale].find(r=>r[0]==c.grade);return r?r[2]:0};
+const gcol=c=>{const r=gp(c)/S.profile.scale;return r>=.95?"--gA":r>=.85?"--gBp":r>=.7?"--gB":r>=.4?"--gC":"--gF"};
 function calc(){let pts=0,h=0;S.terms.forEach(tm=>tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;pts+=c.cr*gp(c)}}));const pl=S.profile.plan;return{gpa:h?pts/h:0,h,left:Math.max(pl-h,0),pct:pl?Math.min(h/pl*100,100):0}}
 function termGpa(tm){let p=0,h=0;tm.courses.forEach(c=>{if(c.status=="done"){h+=c.cr;p+=c.cr*gp(c)}});return h?p/h:null}
 gsap.registerPlugin(ScrollTrigger);
 
+/* ===== الواجهة العامة ===== */
 function statics(){const P=S.profile,pk=o=>o[lang]||o.ar,n=pk(P.name);$("name").textContent=n;$("av").textContent=n.trim()[0]||"?";
  $("info").innerHTML=esc(pk(P.major))+"<br>"+esc(pk(P.college));
  $("ttl").textContent=t("title");$("gl").innerHTML=t("of")(P.scale.toFixed(2))+"<br>"+t("gl");
  $("t_done").textContent=t("tDone");$("t_left").textContent=t("tLeft");$("t_pct").textContent=t("tPct");$("pct2").textContent=t("pof")(P.plan);
- $("lang").textContent=t("langBtn");
+ $("lang").textContent=t("langBtn");$("x").setAttribute("aria-label","Close");
  document.documentElement.lang=lang;document.documentElement.dir=lang=="ar"?"rtl":"ltr";document.title=t("title");lbl()}
-
 const root=document.documentElement,dm=matchMedia("(prefers-color-scheme:dark)");
 if(S.theme)root.dataset.theme=S.theme;
 const isDark=()=>root.dataset.theme?root.dataset.theme=="dark":dm.matches;
 function lbl(){$("theme").textContent=isDark()?t("light"):t("dark")}
-
 function hero(R){const C=364.4,off=C*(1-R.pct/100);$("done").textContent=R.h;$("left").textContent=R.left;
  const set=(g,p)=>{$("gpa").textContent=g.toFixed(2);$("pct").textContent=p.toFixed(2)+"%"};
  if(reduce){set(R.gpa,R.pct);$("arc").style.strokeDashoffset=off;prev={g:R.gpa,p:R.pct};return}
- const o={...prev};gsap.killTweensOf(o);gsap.to(o,{g:R.gpa,p:R.pct,duration:first?2.2:.9,ease:"power3.out",onUpdate:()=>set(o.g,o.p)});
- gsap.to("#arc",{strokeDashoffset:off,duration:first?2.4:1,ease:"power3.out"});
- prev={g:R.gpa,p:R.pct};first=false}
+ const o={...prev};gsap.killTweensOf(o);gsap.to(o,{g:R.gpa,p:R.pct,duration:first?2.2:.9,delay:first?.5:0,ease:"power2.out",onUpdate:()=>set(o.g,o.p),onComplete:()=>set(R.gpa,R.pct)});
+ gsap.to("#arc",{strokeDashoffset:off,duration:first?2.2:.9,delay:first?.5:0,ease:"power2.out"});prev={g:R.gpa,p:R.pct}}
+function card(c,tid){const ip=c.status=="ip",col=ip?"--gIP":gcol(c);
+ return `<article class="card glass" data-t="${tid}" data-id="${c.id}" tabindex="0" role="button" style="--c:var(${col})"><div class="card-t"><div><h3>${esc(c.code)}</h3><div class="cn">${esc(nm(c))}</div></div><div class="badge">${ip?t("ip"):esc(c.grade)}</div></div><div class="meta"><span>${c.cr} ${t("hrs")}</span><span>${ip?(c.parts&&c.parts.mid?t("p").mid+" "+c.parts.mid[0]+" / "+c.parts.mid[1]:"In Progress"):(c.total!=null?c.total+" / 100":"")}</span></div>${ip?(c.parts&&c.parts.mid?`<div class="track"><div class="fill" data-w="${c.parts.mid[0]/c.parts.mid[1]*100}" style="width:${c.parts.mid[0]/c.parts.mid[1]*100}%"></div></div><div class="wait-t">${t("wait")}</div>`:`<div class="track wait"></div><div class="wait-t">${t("wait")}</div>`):`<div class="track"><div class="fill" data-w="${Math.min(c.total??gp(c)/S.profile.scale*100,100)}" style="width:${Math.min(c.total??gp(c)/S.profile.scale*100,100)}%"></div></div>`}</article>`}
+function render(anim){
+ ScrollTrigger.getAll().forEach(s=>s.kill());const R=calc();statics();hero(R);
+ const gr=[...new Set(S.terms.flatMap(tm=>tm.courses.filter(c=>c.status=="done").map(c=>c.grade)))].sort((a,b)=>(SC[S.profile.scale].find(r=>r[0]==b)?.[2]||0)-(SC[S.profile.scale].find(r=>r[0]==a)?.[2]||0));
+ const fl=["all",...gr,"ip"];if(!fl.includes(filter))filter="all";
+ $("chips").innerHTML=fl.map(f=>`<button class="chip ${f==filter?"on":""}" data-f="${esc(f)}">${f=="all"?t("all"):f=="ip"?t("ip"):esc(f)}</button>`).join("");
+ let h="";
+ S.terms.forEach((tm,i)=>{const l=tm.courses.filter(c=>filter=="all"||(filter=="ip"?c.status=="ip":c.status=="done"&&c.grade==filter));
+  if(!l.length&&filter!="all")return;
+  const n=tm.courses.length,d=tm.courses.filter(c=>c.status=="done").length,st=!n?["pEmpty","--gIP"]:d==n?["pDone","--gA"]:d==0?["pIp","--gIP"]:["pMix","--gC"];
+  const hr=tm.courses.reduce((a,c)=>a+c.cr,0),g=termGpa(tm);
+  h+=`<section class="sem"><div class="sem-h"><h2>${esc(tn(tm,i))}<span class="pill" style="--p:var(${st[1]})">${t(st[0])}</span></h2><div class="acts"><span class="s">${hr} ${t("hrs")}${g!=null?" ، "+t("semGpa")+" "+g.toFixed(2):""}</span></div></div>${l.length?`<div class="grid">${l.map(c=>card(c,tm.id)).join("")}</div>`:`<div class="empty">${t("noC")}</div>`}</section>`});
+ $("list").innerHTML=h||`<div class="empty">${S.terms.length?t("noF"):t("noT")}</div>`;
+ if(reduce)return;
+ document.querySelectorAll(".sem").forEach(sec=>{const cs=sec.querySelectorAll(".card"),fs=sec.querySelectorAll(".fill");
+  if(anim)gsap.from(cs,{y:22,opacity:0,duration:.5,stagger:.06,ease:"power3.out",clearProps:"transform,opacity"});
+  if(fs.length)gsap.fromTo(fs,{width:"0%"},{width:(i,el)=>el.dataset.w+"%",duration:1.2,stagger:.1,ease:"power3.out",scrollTrigger:{trigger:sec,start:"top 90%",once:true}})});
+ ScrollTrigger.refresh()}
 
-function chips(){const list=[{id:"all",l:t("all")},{id:"ip",l:t("ip")}];
- S.terms.forEach((tm,i)=>{list.push({id:tm.id,l:tn(tm,i)})});
- $("chips").innerHTML=list.map(c=>`<button class="chip ${filter==c.id?"on":""}" data-f="${c.id}">${esc(c.l)}</button>`).join("");
- document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>filterTerm(b.dataset.f))}
-function filterTerm(id){filter=id;chips();renderList()}
+/* ===== النافذة المنبثقة ===== */
+function showM(html,col){const ov=$("ov"),md=$("md");md.style.setProperty("--c",col||"var(--acc)");$("mb").innerHTML=html;
+ if(curM){if(!reduce)gsap.from("#mb > *",{y:12,opacity:0,duration:.35,stagger:.04,clearProps:"transform,opacity"});return}
+ curM=true;ov.style.display="flex";ov.setAttribute("aria-hidden","false");if(lenis)lenis.stop();$("x").focus({preventScroll:true});
+ if(reduce)return;gsap.killTweensOf([ov,md]);
+ gsap.fromTo(ov,{opacity:0},{opacity:1,duration:.25});gsap.fromTo(md,{opacity:0,scale:.9,y:26},{opacity:1,scale:1,y:0,duration:.5,ease:"power3.out"});
+ gsap.from("#mb > *",{y:14,opacity:0,duration:.45,stagger:.05,delay:.12,clearProps:"transform,opacity"});
+ gsap.fromTo("#mb .fill",{width:"0%"},{width:(i,el)=>el.dataset.w+"%",duration:1,stagger:.08,delay:.3,ease:"power3.out"})}
+function closeM(){if(!curM)return;curM=null;const ov=$("ov"),md=$("md");
+ const end=()=>{ov.style.display="none";ov.setAttribute("aria-hidden","true");if(lenis)lenis.start();if(lastF&&document.contains(lastF))lastF.focus({preventScroll:true})};
+ if(reduce)return end();gsap.killTweensOf([ov,md]);gsap.to(md,{opacity:0,scale:.94,y:16,duration:.25,ease:"power2.in"});gsap.to(ov,{opacity:0,duration:.28,onComplete:end})}
+const find=(tid,id)=>{const tm=S.terms.find(x=>x.id==tid);return[tm,tm&&tm.courses.find(c=>c.id==id)]};
+function viewC(tid,id){const[tm,c]=find(tid,id),ip=c.status=="ip",col=ip?"--gIP":gcol(c);
+ let h=`<span class="mcode">${esc(c.code)}</span><h2>${esc(nm(c))}</h2><div class="mm"><span>${c.cr} ${t("hrs")}</span><span class="badge" style="--c:var(${col})">${ip?t("ip"):esc(c.grade)}</span></div>`;
+ if(ip){KEYS.forEach(k=>{const p=c.parts&&c.parts[k];if(p){const w=p[0]/p[1]*100;h+=`<div class="row"><div class="rt"><span>${t("p")[k]}</span><b>${p[0]} / ${p[1]}</b></div><div class="track"><div class="fill" data-w="${w}" style="width:${w}%"></div></div></div>`}});h+=`<div class="warn"><b>⚠</b><span>${c.parts?t("warn2"):t("warn")}</span></div>`+(c.parts?"":`<div class="track wait" style="margin-top:16px"></div>`)}
+ else{KEYS.forEach(k=>{const p=c.parts&&c.parts[k];if(p){const w=p[0]/p[1]*100;h+=`<div class="row"><div class="rt"><span>${t("p")[k]}</span><b>${p[0]} / ${p[1]}</b></div><div class="track"><div class="fill" data-w="${w}" style="width:${w}%"></div></div></div>`}});
+  if(c.total!=null)h+=`<div class="row tot"><div class="rt"><span>${t("p").tot}</span><b>${c.total} / 100</b></div><div class="track"><div class="fill" data-w="${Math.min(c.total,100)}" style="width:${Math.min(c.total,100)}%"></div></div></div>`}
+ showM(h,`var(${col})`)}
 
-function renderList(){
-  const f=filter;let html="";
-  S.terms.forEach((tm,i)=>{
-    const courses=tm.courses.filter(c=>{if(f=="all")return true;if(f=="ip")return c.status=="ip";return tm.id==f});
-    
-    // تجنب إظهار الفصول التي لا تحتوي على مواد تناسب الفلتر الحالي (مثل الفلتر قيد الدراسة مع الفصل الأول)
-    if(courses.length===0 && f!=="all" && tm.id!==f) return;
-    if(f!="all"&&f!="ip"&&tm.id!=f)return;
-    
-    const tg=termGpa(tm),tDone=tm.courses.filter(c=>c.status=="done").length,tIp=tm.courses.filter(c=>c.status=="ip").length;
-    let badgeText="",badgeColor="--mute";
-    if(tDone==tm.courses.length&&tm.courses.length>0){badgeText=t("pDone");badgeColor="--gA"}
-    else if(tIp==tm.courses.length&&tm.courses.length>0){badgeText=t("pIp");badgeColor="--gIP"}
-    else if(tDone>0){badgeText=t("pMix");badgeColor="--gBp"}
-    else{badgeText=t("pEmpty");badgeColor="--mute"}
-    
-    html+=`<div class="sem" data-id="${tm.id}"><div class="sem-h"><h2>${esc(tn(tm,i))} <span class="pill" style="--p:var(${badgeColor})">${badgeText}</span></h2>
-    <div class="acts"><span class="s">${tg!=null?t("semGpa")+": <b>"+tg.toFixed(2)+"</b>":""}</span></div></div>`;
-    
-    html+=`<div class="grid">`;
-    courses.forEach(c=>{
-      const col=c.status=="done"?gcol(c):"--gIP";
-      html+=`<div class="card glass" style="--c:var(${col})">
-      <div class="card-t"><div><h3>${esc(c.code)}</h3><div class="cn">${esc(nm(c))}</div></div>
-      <div class="badge" style="--c:var(${col})">${c.status=="done"?c.grade:t("ip")}</div></div>`;
-      if(c.status=="done"){
-        const pct=c.total||0;
-        html+=`<div class="meta"><span>${t("p.tot")}</span><b>${pct.toFixed(1)}%</b></div><div class="track"><div class="fill" style="width:${pct}%;--c:var(${col})"></div></div>`;
-      }else{
-        if(c.mid!=null){
-          html+=`<div class="mid-info"><span>الاختبار النصفي (Midterm)</span><b>${c.mid} / 30</b></div>`;
-        }
-        html+=`<div class="wait-t">⏳ ${t("wait")}</div>`;
-      }
-      html+=`</div>`;
-    });
-    html+=`</div></div>`;
-  });
-  if(!html)html=`<div class="empty glass">${t("noF")}</div>`;
-  $("list").innerHTML=html;
-}
+/* ===== الأحداث ===== */
+$("list").onclick=e=>{const c=e.target.closest(".card");if(c){lastF=c;viewC(c.dataset.t,c.dataset.id)}};
+$("list").onkeydown=e=>{if(e.key!="Enter"&&e.key!=" ")return;const c=e.target.closest(".card");if(c){e.preventDefault();lastF=c;viewC(c.dataset.t,c.dataset.id)}};
+$("chips").onclick=e=>{const b=e.target.closest(".chip");if(b){filter=b.dataset.f;render(true)}};
+$("theme").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";S.theme=root.dataset.theme;save();lbl()};
+$("lang").onclick=()=>{lang=lang=="ar"?"en":"ar";save();closeM();render(true)};
+$("ov").onclick=e=>{if(e.target==$("ov"))closeM()};$("x").onclick=closeM;
+document.addEventListener("keydown",e=>{if(e.key=="Escape")closeM()});
+$("hero").addEventListener("pointermove",e=>{const r=e.currentTarget.getBoundingClientRect();e.currentTarget.style.setProperty("--mx",(e.clientX-r.left)+"px");e.currentTarget.style.setProperty("--my",(e.clientY-r.top)+"px")});
+if(window.Lenis){lenis=new Lenis({lerp:.075,smoothWheel:true});lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(tm=>lenis.raf(tm*1000));gsap.ticker.lagSmoothing(0)}
 
-function render(){statics();hero(calc());chips();renderList()}
-
-$("lang").onclick=()=>{lang=lang=="ar"?"en":"ar";render();statics()};
-$("theme").onclick=()=>{
-  const d=isDark();root.dataset.theme=d?"light":"dark";S.theme=root.dataset.theme;lbl();
-};
-
-window.onload=()=>{
-  statics();render();
-  lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
-  function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
-  requestAnimationFrame(raf);
-};
+/* ===== تشغيل ===== */
+render(false);
+if(!reduce)gsap.timeline({defaults:{ease:"power3.out"}}).from(".topbar",{y:-20,opacity:0,duration:.6}).from(".hero",{y:40,opacity:0,scale:.97,duration:.9},"-=.3").from(".hero-txt > *",{y:22,opacity:0,duration:.7,stagger:.1},"-=.5").from(".bar",{y:16,opacity:0,duration:.5},"-=.3");
+first=false;
 </script>
 </body>
 </html>
