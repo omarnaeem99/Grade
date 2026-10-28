@@ -113,7 +113,7 @@ D("EL111","مهارات الاتصال في اللغة الإنجليزية 1","
 D("AR111","مهارات الاتصال في اللغة العربية 1","Arabic Communication Skills 1",3,{att:[10,10],tma:[10,10],mid:[25,30],fin:[38,50]}),
 D("TU170","أساسيات الحوسبة","Computing Fundamentals",3,{att:[10,10],tma:[10,10],mid:[22,30],fin:[41,50]}),
 D("MT129","حساب التفاضل والتكامل والاحتمال","Calculus and Probability",4,{att:[10,10],tma:[10,10],mid:[17,30],fin:[41,50]})]},
-{id:uid(),name:"",courses:[IP("AR112","مهارات الاتصال في اللغة العربية 2","Arabic Communication Skills 2",3,21),IP("EL112","مهارات الاتصال في اللغة الإنجليزية 2","English Communication Skills 2",3,25.5),IP("GR111","الدراسات الإسلامية","Islamic Studies",3,29),IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4),IP("TM105","مقدمة في البرمجة","Introduction to Programming",4,27)]}],theme:"",lang:"ar"};
+{id:uid(),name:"",courses:[IP("AR112","مهارات الاتصال في اللغة العربية 2","Arabic Communication Skills 2",3,21),IP("EL112","مهارات الاتصال في اللغة الإنجليزية 2","English Communication Skills 2",3,25.5),IP("GR111","الدراسات الإسلامية","Islamic Studies",3,29),IP("MT131","الرياضيات المنفصلة","Discrete Mathematics",4,27.5),IP("TM105","مقدمة في البرمجة","Introduction to Programming",4,27)]}],theme:"",lang:"ar"};
 s.terms[0].courses.forEach(c=>c.grade=gradeOf(c.total,4));return s}
 const gradeOf=(tot,sc)=>SC[sc].find(r=>tot>=r[1])[0];
 function load(){const s=sample();try{const p=JSON.parse(localStorage.getItem(KEY)||"{}");if(p.lang)s.lang=p.lang;if(p.theme)s.theme=p.theme}catch(e){}return s}
